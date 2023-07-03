@@ -1,78 +1,47 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Nav, Navbar, Offcanvas } from 'react-bootstrap';
-import Icon from '../../assets/images/icon.png';
-import { faMagnifyingGlass, faUser } from '@fortawesome/free-solid-svg-icons';
+import { useRef } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+import {faMagnifyingGlass, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import './header.css';
-
+import "./header.css";
+import LogoIcon from '../../assets/images/icon.png'
 function Header() {
-  const [showMenu, setShowMenu] = useState(false);
+	const navRef = useRef();
 
-  const toggleMenu = () => {
-    setShowMenu(!showMenu);
-  };
+	const showNavbar = () => {
+		navRef.current.classList.toggle(
+			"responsive_nav"
+		);
+	};
 
-  return (
-    <div className="header">
-      <Container>
-        <Navbar expand="lg">
-          <Row>
-            <Col lg="6">
-              <Navbar.Brand href="/home">
-                <div className="logo__icon">
-                  <img src={Icon} alt="" />
-                </div>
-              </Navbar.Brand>
-            </Col>
-            <Col>
-              <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={toggleMenu} />
-            </Col>
-            <Col lg="4">
-              <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="mr-auto">
-                  <Nav.Item>
-                    <Nav.Link href="/home">Active</Nav.Link>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <Nav.Link eventKey="link-1">Link</Nav.Link>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <Nav.Link eventKey="link-2">Link</Nav.Link>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <Nav.Link eventKey="disabled" disabled>
-                      Disabled
-                    </Nav.Link>
-                  </Nav.Item>
-                </Nav>
-              </Navbar.Collapse>
-            </Col>
-          </Row>
-        </Navbar>
-        <Offcanvas show={showMenu} onHide={toggleMenu}>
-          <Offcanvas.Header closeButton>
-            <Offcanvas.Title>Menu</Offcanvas.Title>
-          </Offcanvas.Header>
-          <Offcanvas.Body>
-            <Nav className="flex-column">
-              <Nav.Item>
-                <Nav.Link href="/home">Active</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey="link-1">Link</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey="link-2">Link</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-               
-              </Nav.Item>
-            </Nav>
-          </Offcanvas.Body>
-        </Offcanvas>
-      </Container>
+	return (
+		<header>
+    <div className="logo__icon">
+    <img src={LogoIcon} alt="" />
     </div>
-  );
+			<nav ref={navRef}>
+				<form action="">
+        <div class="my-3 input-group input-group-sm">
+         
+            <input type="text" class="form-control" placeholder="Search..." />
+            <span class="input-group-text" type="button" id="ieye">  <FontAwesomeIcon icon={faMagnifyingGlass} /></span> 
+          </div>
+        </form>
+				<a href="/#">My Profile <FontAwesomeIcon icon={faUser} /></a>
+				<button
+					className="nav-btn nav-close-btn"
+					onClick={showNavbar}>
+					<FaTimes />
+				</button>
+			</nav>
+			<button
+				className="nav-btn"
+				onClick={showNavbar}>
+				<FaBars />
+			</button>
+		</header>
+	);
 }
 
 export default Header;
+
+

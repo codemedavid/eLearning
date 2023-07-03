@@ -1,10 +1,10 @@
-import Header from './components/header/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { MainDashboard } from './pages/MainDashboard/MainDashboard';
 
 function App() {
   return (
     <div className="App">
-    <Header />
+    <MainDashboard />
     </div>
   );
 }
