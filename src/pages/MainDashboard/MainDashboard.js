@@ -5,7 +5,6 @@ import Dashboard from '../../components/dashhboard/Dashboard';
 export const MainDashboard = () => {
   return (
     <div>
-        <Header />
         <Dashboard />
         <br />
     </div>

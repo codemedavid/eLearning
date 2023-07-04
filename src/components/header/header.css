@@ -7,7 +7,7 @@
 	font-family: "Titillium Web", sans-serif;
 }
 .logo__icon img{
-    width: 70px;
+    width: 60px;
 }
 
 :root {
@@ -21,7 +21,7 @@ header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	height: 80px;
+	height: 40px;
 	padding: 0 2rem;
 	background-color: var(--mainColor);
 	color: var(--textColor);

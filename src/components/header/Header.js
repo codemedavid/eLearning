@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import {faMagnifyingGlass, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from "react-router-dom";
 import "./header.css";
 import LogoIcon from '../../assets/images/icon.png'
 function Header() {
@@ -14,9 +15,11 @@ function Header() {
 	};
 
 	return (
-		<header>
+		<header className="h-25">
     <div className="logo__icon">
-    <img src={LogoIcon} alt="" />
+	<Link to={'/'}>
+	<img src={LogoIcon} alt="" />
+	</Link>
     </div>
 			<nav ref={navRef}>
 				<form action="">

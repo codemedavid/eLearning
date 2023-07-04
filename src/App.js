@@ -1,10 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { MainDashboard } from './pages/MainDashboard/MainDashboard';
-
+import Header from './components/header/Header';
+import Router from './Routers/Router';
 function App() {
+  
   return (
     <div className="App">
-    <MainDashboard />
+    <Header></Header>
+     <Router></Router>
+
     </div>
   );
 }
