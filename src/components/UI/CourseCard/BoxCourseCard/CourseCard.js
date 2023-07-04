@@ -1,9 +1,9 @@
 import React from 'react';
 import { Card, Row, Col } from 'react-bootstrap';
 import { motion } from 'framer-motion';
-import Onepercent from '../../../assets/images/onepercent.png';
-import User from '../../../assets/images/instructor.jpg';
-import './courseCard.css';
+import Onepercent from '../../../../assets/images/onepercent.png';
+import User from '../../../../assets/images/instructor.jpg';
+import './courseCard.css'
 
 const CourseCard = (props) => {
   const cardVariants = {
