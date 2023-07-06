@@ -1,5 +1,6 @@
 import React from 'react'
 import './helmet.css'
+import { Link } from 'react-router-dom'
 import Banner from '../../assets/images/banner.png'
 function Helmet(props) {
     const bg = props.backgroundImage
@@ -12,7 +13,7 @@ function Helmet(props) {
       <div className="helmet__title">
         <h2>1% Freelancer Formula Accelerator</h2>
         <p>Apply The 1% Formula faster and stronger through a step-by-step learning and implementation process!</p>
-        <button className='btn btn-primary'>Resume Course</button>
+        <button className='btn btn-primary'><Link className="text-white" to={'/lessons/2'}>Resume Course </Link></button>
       </div>
       </div>
     </div>

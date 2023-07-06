@@ -15,7 +15,7 @@ function Header() {
 	};
 
 	return (
-		<header className="h-25">
+		<header className="h-25 header">
     <div className="logo__icon">
 	<Link to={'/'}>
 	<img src={LogoIcon} alt="" />
@@ -28,7 +28,7 @@ function Header() {
             <input type="text" class="form-control" placeholder="Search..." />
             <span class="input-group-text" type="button" id="ieye">  <FontAwesomeIcon icon={faMagnifyingGlass} /></span> 
           </div>
-        </form>
+                </form>
 				<a href="/#">My Profile <FontAwesomeIcon icon={faUser} /></a>
 				<button
 					className="nav-btn nav-close-btn"

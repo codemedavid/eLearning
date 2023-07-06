@@ -15,6 +15,7 @@ function TopicSection() {
         <Col className=' bg-primary ' lg="7">
         <InlineCourse />
         <InlineCourse />
+        <InlineCourse />
         </Col>
     </Row>
    </Container>

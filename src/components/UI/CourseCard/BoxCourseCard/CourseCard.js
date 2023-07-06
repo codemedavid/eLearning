@@ -1,10 +1,11 @@
 import React from 'react';
 import { Card, Row, Col } from 'react-bootstrap';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import Onepercent from '../../../../assets/images/onepercent.png';
 import User from '../../../../assets/images/instructor.jpg';
 import './courseCard.css'
-
+import Course from '../../../../assets/objects/CourseList'
 const CourseCard = (props) => {
   const cardVariants = {
     hover: {
@@ -16,17 +17,19 @@ const CourseCard = (props) => {
   };
 
   return (
-    <div>
+    <div className='courseCard'>
+    {Course.title}
       <motion.div
         style={{ width: '14rem' }}
         variants={cardVariants}
         whileHover="hover"
       >
+       <Link to={`/topics/${props.courseId}`} style={{ cursor: 'pointer' }} className='no-text-decoration'>
         <Card>
           <Card.Img variant="top" src={Onepercent} />
           <Card.Body className="bg-white">
-            <Card.Title className="text-black card__title title__height">{props.title}</Card.Title>
-            <Card.Text className="card__text">
+            <Card.Title className="text-black no-text-decoration card__title title__height">{props.title}</Card.Title>
+            <Card.Text className="card__text no-text-decoration">
               Some quick example text to build on the card title and make up the bulk of the card's content.
             </Card.Text>
           </Card.Body>
@@ -37,13 +40,14 @@ const CourseCard = (props) => {
               </Col>
               <Col lg="7">
               <div className="d-flex align-items-center justify-content-center">
-              <p className="author__name">John Angelo David</p>
+              <p className="author__name no-text-decoration">John Angelo David</p>
               </div>
               </Col>
               <Col></Col>
             </Row>
           </Card.Footer>
         </Card>
+        </Link>
       </motion.div>
     </div>
   );
